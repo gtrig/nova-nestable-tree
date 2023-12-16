@@ -63,11 +63,25 @@ To use the Nested Sortable tool, follow these steps:
 
 2. Configure the tool through the `config/nestable-tree.php` file. You can customize various aspects of the tool, such as the resource class, the column names, and the sorting behavior.
 
+```php
+return [
+    'sortable_resources' => [
+        'category' => [
+            'model' => 'App\\Models\\Category',
+            'resource' => 'App\\Http\\Resources\\SortableCategoryResource',
+            'collection' => 'App\\Http\\Resources\\SortableCategoryCollection',
+            'link' => 'category',
+            'label' => 'Categories',
+        ],
+        // Add more resources as needed
+    ]
+];
+```
+
 3. Access the Nested Sortable tool in your Laravel Nova admin panel. You will be able to drag and drop entities to rearrange their order and hierarchy.
 
-## Contributinggit
-
-Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/gtrig/nova-nestable-tree).
+## Theming
+The module features dark and light theme compatibility.
 
 ## License
 
